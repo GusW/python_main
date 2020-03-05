@@ -1,0 +1,5 @@
+click==7.0
+flask==1.1.1
+flask_sqlalchemy==2.4.1
+flask_bcrypt==0.7.1
+sqlalchemy_utils==0.36.1

@@ -5,7 +5,7 @@ import datetime
 from collections import deque
 
 
-class Price:
+class AssetPrice:
     _instances = deque()
 
     def __init__(self, asset, price):
@@ -16,30 +16,29 @@ class Price:
         self.__class__._instances.append(self)
 
     @staticmethod
-    def get_all_prices():
-        return Price._instances
+    def get_prices():
+        return AssetPrice._instances
 
     @staticmethod
-    def get_instance_price(asset):
-        return ([x for x in Price.get_all_prices() if x.asset == asset][0] if
-                len([x for x in Price.get_all_prices() if x.asset == asset]) > 0 else None)
+    def get_asset_price(asset):
+        asset_price_list = [p for p in AssetPrice.get_prices() if p.asset == asset]
+        if len(asset_price_list) > 0:
+            return asset_price_list[0]
 
+        raise UnknownAssetPriceException('{} not found in database'.format(asset))
+            
     @classmethod
     def insert_new_price(cls, asset, price):
-        if not Price.get_instance_price(asset):
+        if not cls.get_asset_price(asset):
             return cls(
                 asset=asset,
                 price=price
             )
-
-        return None
-
-    @staticmethod
-    def update_price(asset, price):
-        asset_price = Price.get_instance_price(asset)
-        if asset_price is not None:
-            asset_price.price = price
-            asset_price.updated_at = datetime.datetime.now()
-            return asset_price
-
-        return None
+        
+        raise PreexistingAssetPriceException('There is already an AssetPrice named {} in database'.format(asset))
+    
+    # should be property?
+    def update_asset_price(self, asset = None, price = None):
+        self.asset = asset if asset else self.asset
+        self.price = price if price else self.price
+        self.updated_at = datetime.datetime.now()
