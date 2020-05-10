@@ -1,7 +1,7 @@
 import application.db_interface.user_interface as user_interface
 import application.enums.enums as enums
-import application.lib.lib as lib
-import application.lib.utils as utils
+import application.utils.utils as utils
+import application.utils.common as common
 
 
 # Common
@@ -10,7 +10,7 @@ def _api_endpoint_dispatcher(function_handler, data=None):
         Should call the passed function with the underlying request data
     '''
     payload, response_code = function_handler(data)
-    return utils.json_response(payload, response_code)
+    return common.json_response(payload, response_code)
 
 
 # Common
@@ -49,7 +49,7 @@ def _calculate_md5_handler(data):
         If successful, the tuple contains a dict {'md5': hash} and a int 200
         Will return a dict {'error': error_message} and a int 500 otherwise
     '''
-    function_call = lib.generate_md5_hash_from_string
+    function_call = utils.generate_md5_hash_from_string
     try:
         payload_value = _data_handler(function_call,
                                       data,

@@ -1,7 +1,7 @@
 import application.enums.enums as enums
 from application.config.core import db
 from application.db_models.common import DatabaseMixin
-import application.lib.lib as lib
+import application.utils.utils as utils
 
 
 class User(db.Model, DatabaseMixin):
@@ -16,7 +16,7 @@ class User(db.Model, DatabaseMixin):
         self.first_name = first_name
         self.email = email
         self.password = self._encrypt_password(password)
-        self.uuid = lib.generate_uuid(email)
+        self.uuid = utils.generate_uuid(email)
 
     def __repr__(self):
         return f'<User {self.first_name}>'
@@ -33,7 +33,7 @@ class User(db.Model, DatabaseMixin):
 
     @staticmethod
     def _encrypt_password(password):
-        return lib.encrypt_password(password)
+        return utils.encrypt_password(password)
 
     @staticmethod
     def get_all_instances():

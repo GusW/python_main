@@ -1,5 +1,5 @@
 from flask import Response
-import application.lib.utils as utils
+import application.utils.common as common
 
 
 def test_json_response_returns_flask_response():
@@ -9,7 +9,7 @@ def test_json_response_returns_flask_response():
     data = {"foo": "bar"}
 
     # When I call json_response
-    response = utils.json_response(data)
+    response = common.json_response(data)
 
     # Then it should have returned a flask response object
     response.should.be.a(Response)
