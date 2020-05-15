@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#
 from flask import render_template, request
 
 import application.config.core as core
@@ -69,4 +66,8 @@ if __name__ == "__main__":
     from application.config.db_config import DBConfig
 
     DBConfig().handle_existing_database()
-    application.run()
+    application.run(
+        # TODO pass in OS ENV
+        # host='0.0.0.0',
+        # port=5000
+    )
