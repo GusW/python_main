@@ -1,0 +1,11 @@
+# grupo 4 - Manuela y Gustavo
+1 - assert datos de la tarjeta 
+2 - assert que ningun request sea generado si los datos esten mal
+3 - assert que el request para merchant con datos buenos volvera con 200 
+
+TODO
+1. Carrito nuevo está vacío
+2. (comienzo con carrito vacío) Agrego 1 ejemplar de 1 libro y el carrito lo contiene y deja de estar vacío
+3. (comienzo con carrito vacío) Agrego más de 1 ejemplar de 1 libro y el carrito los contiene y deja de estar vacío
+4. (comienzo con carrito vacío) No se puede agregar libro que no pertenece a la editorial (verificar que levanta excepción, y carrito siga vacío)
+5. (comienzo con carrito vacío) No se puede agregar cantidad 0 o negativa (verificar que levanta excepción, y carrito siga vacío) 
