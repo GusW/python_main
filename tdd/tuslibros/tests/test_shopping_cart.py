@@ -9,7 +9,7 @@ class TestPurchase(TestCase):
         self.valid_ISBN = TestFactory.A_VALID_ISBN
         self.another_valid_ISBN = TestFactory.ANOTHER_VALID_ISBN
         self.invalid_ISBN = TestFactory.INVALID_ISBN
-        self.new_shopping_cart = TestFactory.create_new_shopping_cart()
+        self.new_shopping_cart = TestFactory.create_cart()
 
     def tearDown(self):
         super(TestPurchase, self).tearDown()

@@ -9,3 +9,19 @@ TODO
 4. (comienzo con carrito vacío) No se puede agregar libro que no pertenece a la editorial (verificar que levanta excepción, y carrito siga vacío)
 5. (comienzo con carrito vacío) No se puede agregar cantidad 0 o negativa (verificar que levanta excepción, y carrito siga vacío)
 6.
+7. Merchant processor caido
+8. tarjeta sin credito
+9. Procesamiento exitoso
+
+1. /createCart carrito con client ID valido
+2. /createCart carrito con password valido
+3. /createCart carrito es creado vacio
+4. /addToCart agregarmos libros
+5. /listCart agregarmos libros
+6. 30 min
+
+Romanos --> Romanos-TDD
+TusLibros 1—> tuslibros1
+TusLibros 2-> cajeroloco
+TusLibros 3-> simulando
+TusLibros 4-> fin

@@ -20,6 +20,9 @@ class ShoppingCart(object):
     def publishing_house_catalog(self):
         return self._publishing_house_catalog
 
+    def isEmpty(self):
+        return len(self.cart) == 0
+
     def add(self, isbn, qty=1):
         if qty < 1:
             raise Exception(ShoppingCartExceptionsEnum.QUANTITY_LESS_THAN_ONE.value)
