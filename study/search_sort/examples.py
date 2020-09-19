@@ -75,6 +75,7 @@ def solution(A, B):
 
     return res
 
+
 print(solution(3, 3))
 print(solution(1, 4))
 
@@ -109,8 +110,7 @@ def solution2(T):
                 giveAwayCakes += 1
 
     print(cakeTypeCounter)
-    return len([ v for _, v in cakeTypeCounter.items() if v > 0 ])
-
+    return len([v for _, v in cakeTypeCounter.items() if v > 0])
 
 
 print(solution2([3, 4, 7, 7, 6, 6]))

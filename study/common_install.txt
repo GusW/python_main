@@ -1,4 +1,0 @@
-
-
-virtualenv -p /user/bin/python3.6 <path/to/venv>
-export PYTHONPATH="${PYTHONPATH}:/path/to/application"
