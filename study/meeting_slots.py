@@ -11,11 +11,11 @@ min_meeting_timespan = 30
 # EXPECTED ANSWER = [['11:30', '12:00'], ['15:00', '16:00'], ['18:00', '18:30']]
 
 
-def _calculate_minutes_as_hour_rate(minutes_int):
+def _calculate_minutes_as_hour_rate(minutes_int) -> int:
     return int(100 / (60/int(minutes_int)))
 
 
-def _parse_time_string_to_int(time: str):
+def _parse_time_string_to_int(time: str) -> int:
     hours, minutes = time.split(':', 1)
     if minutes != '00':
         minutes = _calculate_minutes_as_hour_rate(minutes)
@@ -23,17 +23,17 @@ def _parse_time_string_to_int(time: str):
     return int(hours + str(minutes))
 
 
-def _parse_int_2_time_string(time: int):
+def _parse_int_2_time_string(time: int) -> str:
     minutes_digits = time % 100
     hour_rate = int(60 / (100 / minutes_digits)) if minutes_digits else '00'
     return str(time)[:-2] + ':' + str(hour_rate)
 
 
-def _parse_meeting_str_2_int_tuple(meeting: str):
+def _parse_meeting_str_2_int_tuple(meeting: str) -> map:
     return map(_parse_time_string_to_int, meeting)
 
 
-def _extract_common_time_constrains(time_contrains: list):
+def _extract_common_time_constrains(time_contrains: list) -> tuple:
     min_constrain = max_constrain = None
     for availability in time_contrains:
         min_individual_constrain, max_individual_constrain = _parse_meeting_str_2_int_tuple(availability)
@@ -47,7 +47,7 @@ def _extract_common_time_constrains(time_contrains: list):
 
 
 def _generate_common_calendar(time_contrains: tuple,
-                              slot_in_min: int):
+                              slot_in_min: int) -> dict:
     min_constrain, max_constrain = _extract_common_time_constrains(time_contrains)
     slot_hour_rate = _calculate_minutes_as_hour_rate(slot_in_min)
     return {time_slot: True for time_slot in range(min_constrain,
@@ -56,7 +56,7 @@ def _generate_common_calendar(time_contrains: tuple,
 
 
 def _get_meeting_busy_slots(meeting: list,
-                            slot_in_min: int):
+                            slot_in_min: int) -> list:
     init_time, end_time = _parse_meeting_str_2_int_tuple(meeting)
     return [slot_init for slot_init in range(init_time,
                                              end_time,
@@ -64,8 +64,7 @@ def _get_meeting_busy_slots(meeting: list,
 
 
 def _get_user_calendar_busy_slots(meetings: list,
-                                  slot_in_min: int):
-
+                                  slot_in_min: int) -> deque:
     busy_slots = deque()
     for m in meetings:
         busy_slots.extend(_get_meeting_busy_slots(m, slot_in_min))
@@ -74,7 +73,7 @@ def _get_user_calendar_busy_slots(meetings: list,
 
 
 def _merge_available_time_slots(common_calendar: dict,
-                                slot_in_min: int):
+                                slot_in_min: int) -> list:
     available_slots = [slot for slot, availability in common_calendar.items() if availability]
     slot_timespan = _calculate_minutes_as_hour_rate(slot_in_min)
 
@@ -100,21 +99,20 @@ def _merge_available_time_slots(common_calendar: dict,
 
 def _find_available_time_for_calendars(users_calendar: list,
                                        time_contrains: tuple,
-                                       slot_in_min: int):
-
+                                       slot_in_min: int) -> list:
     common_calendar = _generate_common_calendar(time_contrains, slot_in_min)
     for user_cal in users_calendar:
         busy_slots = _get_user_calendar_busy_slots(user_cal, slot_in_min)
         for slot in busy_slots:
             common_calendar[slot] = False
 
-    print(_merge_available_time_slots(common_calendar, slot_in_min))
+    return _merge_available_time_slots(common_calendar, slot_in_min)
 
 
 def main():
-    _find_available_time_for_calendars([cal1, cal2],
-                                       [ava1, ava2],
-                                       min_meeting_timespan)
+    print(_find_available_time_for_calendars([cal1, cal2],
+                                             [ava1, ava2],
+                                             min_meeting_timespan))
 
 
 if __name__ == '__main__':
