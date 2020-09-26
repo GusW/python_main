@@ -1,39 +1,55 @@
-from collections import deque
+# [['11:30', '12:00'], ['15:00', '16:00'], ['18:00', '18:30']]
+
+cal1 = [['9:00', '10:30'], ['12:00', '13:00'], ['16:00', '18:00']]
+ava1 = ['9:00', '20:00']
+cal2 = [['10:00', '11:30'], ['12:30', '14:30'], ['14:30', '15:00'], ['16:00', '17:00']]
+ava2 = ['10:00', '18:30']
+min_meeting_timespan = 30
 
 
-def _transpose_arr_to_match_programming_index(arr):
-    return deque(list(map(lambda x: x-1, arr)))
+def _parse_time_string_to_int(time: str):
+    hours, minutes = time.split(':', 1)
+    if minutes != '00':
+        minutes = 100 / (60/int(minutes))
+
+    return int(hours + str(minutes))
 
 
-def _swap_item(transposed_arr, item, ix):
-    current_ix = transposed_arr.index(ix)
-    transposed_arr[ix], transposed_arr[current_ix] = ix, item
-    return transposed_arr
+def _extract_common_time_constrains(time_contrains: list):
+    min_constrain = max_constrain = None
+    for time in time_contrains:
+        min_individual_constrain, max_individual_constrain = map(_parse_time_string_to_int, time)
+        if not min_constrain or min_individual_constrain > min_constrain:
+            min_constrain = min_individual_constrain
+
+        if not max_constrain or max_individual_constrain < max_constrain:
+            max_constrain = max_individual_constrain
+
+    return min_constrain, max_constrain
 
 
-def minimumSwaps(arr):
-    transposed_arr = _transpose_arr_to_match_programming_index(arr)
-    total_count = 0
-    for ix in range(len(transposed_arr)-1):
-        # print(f'transposed_arr == {transposed_arr}')
-        item = transposed_arr[ix]
-        # print(f'ix:item == {ix}:{item}')
-        if item != ix:
-            total_count += 1
-            transposed_arr = _swap_item(transposed_arr, item, ix)
-
-    return total_count
+def _parse_int_to_minutes(time: int):
+    pass
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+def _generate_common_calendar(time_contrains: tuple,
+                              slot_in_min: int):
 
-    n = int(input())
+    min_constrain, max_constrain = time_contrains
+    slot_hour_rate = 100 / (60 / slot_in_min)
+    return {time_slot: False for time_slot in range(min_constrain,
+                                                    max_constrain,
+                                                    slot_hour_rate)}
 
-    arr = list(map(int, input().rstrip().split()))
 
-    res = minimumSwaps(arr)
+# def _find_available_time_for_calendar(users_calendar: list(list(str)),
+#                                       time_contrains: tuple(int),
+#                                       slot_in_min: int):
 
-    fptr.write(str(res) + '\n')
+#     common_calendar = _generate_common_calendar(time_contrains, slot_in_min)
+#     for meeting in users_calendar:
 
-    fptr.close()
+
+
+# def _match_available_time_within_constrains(time_contrains: list(list),
+#                                             schedule: )
