@@ -2,12 +2,13 @@ from datetime import datetime
 
 
 def get_function():
-    print "inside get_function"
+    print("inside get_function")
 
     def returned_function():
-        print "inside returned_function"
+        print("inside returned_function")
         return 1
-    print "outside returned_function"
+
+    print("outside returned_function")
     return returned_function
 
 
@@ -20,7 +21,9 @@ def timed_event(func):
             after-before
         ))
         return x
+
     return new_function
+
 
 @timed_event
 def add(x, y):
@@ -30,4 +33,3 @@ def add(x, y):
 @timed_event
 def multiply(x, y):
     return x * y
-

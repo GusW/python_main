@@ -2,13 +2,15 @@ def time_this(original_function):
     print("decorating")
 
     def new_function(*args, **kwargs):
-        print("starting timer")
         import datetime
+
+        print("starting timer")
         before = datetime.datetime.now()
         x = original_function(*args, **kwargs)
         after = datetime.datetime.now()
         print("Elapsed Time = {0}".format(after-before))
         return x
+
     return new_function
 
 
