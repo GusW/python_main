@@ -1,6 +1,5 @@
 def binary_search(items, desired_item, start=0, end=None):
-    if end is None:
-        end = len(items)
+    end = end or len(items)
 
     if start == end:
         raise ValueError("%s was not found in the list." % desired_item)
@@ -11,7 +10,7 @@ def binary_search(items, desired_item, start=0, end=None):
         return pos
     elif desired_item > items[pos]:
         return binary_search(items, desired_item, start=(pos + 1), end=end)
-    else:  # desired_item < items[pos]:
+    else:
         return binary_search(items, desired_item, start=start, end=pos)
 
 
@@ -26,7 +25,7 @@ def shortBubbleSort(alist):
                 temp = alist[i]
                 alist[i] = alist[i+1]
                 alist[i+1] = temp
-        passnum = passnum-1
+        passnum -= 1
 
     return alist
 
@@ -41,19 +40,62 @@ def quickSort(inlist):
         return lesser + [pivot] + greater
 
 
+def merge_sort(inlist):
+    from copy import deepcopy
+
+    new_list = deepcopy(inlist)
+    if len(new_list) > 1:
+        mid = len(new_list) // 2
+        left = new_list[:mid]
+        right = new_list[mid:]
+
+        # Recursive call on each half
+        merge_sort(left)
+        merge_sort(right)
+
+        # Two iterators for traversing the two halves
+        i = j = 0
+
+        # Iterator for the main list
+        k = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                # The value from the left half has been used
+                new_list[k] = left[i]
+                # Move the iterator forward
+                i += 1
+            else:
+                new_list[k] = right[j]
+                j += 1
+            # Move to the next slot
+            k += 1
+
+        # For all the remaining values
+        while i < len(left):
+            new_list[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            new_list[k] = right[j]
+            j += 1
+            k += 1
+
+    return new_list
+
+
 someList = [200, 20, 30, 210, 40, 90, 50, 215, 60, 70, 80, 100, 110]
 
-print(shortBubbleSort(someList))
 
-print(quickSort(someList))
-
-print(binary_search(quickSort(someList), 215))
+print(f'BubbleSort == {shortBubbleSort(someList)}')
+print(f'merge_sort == {merge_sort(someList)}')
+print(f'QuickSort == {quickSort(someList)}')
+print(f'BinarySearch == {binary_search(quickSort(someList), 215)}')
 
 
 def solution(A, B):
-    # write your code in Python 3.6
     res = ''
-    # import pdb; pdb.set_trace()
     major, majorLetter = (range(A), 'a') if A > B else (range(B), 'b')
     minor, minorLetter = (range(B), 'b') if majorLetter == 'a' else (range(A), 'a')
     while len(major) or len(minor):
@@ -81,8 +123,6 @@ print(solution(1, 4))
 
 
 def solution2(T):
-    # giveAwaySize = T/2
-    # import pdb; pdb.set_trace()
     cakeTypeCounter = {}
     for i in set(T):
         cakeTypeCounter[i] = T.count(i)
@@ -94,15 +134,12 @@ def solution2(T):
             if v > len(T)/2:
                 cakeTypeCounter[k] = v - len(T)/2
                 giveAwayCakes += len(T)/2
-                # retainedCakes += len(T)/2
             elif v == len(T)/2:
                 cakeTypeCounter[k] = (v - len(T)/2) + 1
                 giveAwayCakes += (len(T)/2) - 1
-                # retainedCakes += len(T)/2 + 1
             elif v > 1:
                 cakeTypeCounter[k] = int(v/2)
                 giveAwayCakes += (v - cakeTypeCounter[k])
-                # retainedCakes +=
             else:
                 if sum([v for v in cakeTypeCounter.values()]) > len(T)/2:
                     cakeTypeCounter[k] = v - 1
