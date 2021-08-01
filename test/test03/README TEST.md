@@ -1,4 +1,4 @@
-# NewStore Cloud Developer Task - gustavo.watanabe@gmail.com
+# gustavo.watanabe@gmail.com
 
 ## Setting up your environment
 
@@ -26,6 +26,6 @@ Running the server:
 You may need to export PYTHONPATH if running into ImportError on running the server:
 $ export PYTHONPATH="${PYTHONPATH}:/path/to/application"
 
-#### 
+####
 
 ## Thank you!
