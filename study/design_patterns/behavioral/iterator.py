@@ -6,7 +6,7 @@ using a single iterator interface.
 """
 from __future__ import annotations
 from collections.abc import Iterable, Iterator
-from typing import Any, List
+from typing import Any, Optional
 
 
 """
@@ -60,7 +60,7 @@ class WordsCollection(Iterable):
     iterator instances, compatible with the collection class.
     """
 
-    def __init__(self, collection: List[Any] = []) -> None:
+    def __init__(self, collection: Optional[Iterable[Any]] = None) -> None:
         self._collection = collection
 
     def __iter__(self) -> AlphabeticalOrderIterator:

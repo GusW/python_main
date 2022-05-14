@@ -97,7 +97,8 @@ print(f'BinarySearch == {binary_search(quickSort(someList), 215)}')
 def solution(A, B):
     res = ''
     major, majorLetter = (range(A), 'a') if A > B else (range(B), 'b')
-    minor, minorLetter = (range(B), 'b') if majorLetter == 'a' else (range(A), 'a')
+    minor, minorLetter = (
+        range(B), 'b') if majorLetter == 'a' else (range(A), 'a')
     while len(major) or len(minor):
         for i in major:
             if i < 2:
@@ -128,7 +129,8 @@ def solution2(T):
         cakeTypeCounter[i] = T.count(i)
 
     giveAwayCakes = 0
-    reverseCakeList = sorted(cakeTypeCounter.items(), key=lambda x: x[1], reverse=True)
+    reverseCakeList = sorted(cakeTypeCounter.items(),
+                             key=lambda x: x[1], reverse=True)
     while giveAwayCakes < len(T)/2:
         for k, v in reverseCakeList:
             if v > len(T)/2:

@@ -13,9 +13,11 @@ if __name__ == "__main__":
         # submit returns future objects
         results = [executor.submit(_sync_sec, 2.5) for _ in range(100)]
         # need to call as_completed to return from the futures
-        list(map(lambda x: print(x.result()), concurrent.futures.as_completed(results)))
+        list(map(lambda x: print(x.result()),
+             concurrent.futures.as_completed(results)))
 
-    print(f'Time elapsed with submit/as_completed => {round(perf_counter()-time_init, 2)}s')
+    print(
+        f'Time elapsed with submit/as_completed => {round(perf_counter()-time_init, 2)}s')
 
     # OR
     time_init = perf_counter()

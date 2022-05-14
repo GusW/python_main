@@ -18,7 +18,8 @@ def _trigger_multiprocessing_for_fn(fn, *args):
 if __name__ == "__main__":
     time_init = perf_counter()
 
-    processes = [_trigger_multiprocessing_for_fn(_sync_sec, 2.5) for _ in range(100)]
+    processes = [_trigger_multiprocessing_for_fn(
+        _sync_sec, 2.5) for _ in range(100)]
     # processes must be joined to finish before moving foward on code
     list(map(lambda x: x.join(), processes))
 
