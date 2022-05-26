@@ -8,7 +8,7 @@ class RomanNumberTextRepresentation(object):
                       asFive='V',
                       asTen='X'):
         if 1 <= aDigit <= 3:
-            for i in range(aDigit):
+            for _ in range(aDigit):
                 stringBuilder += asOne
         elif aDigit == 4:
             stringBuilder += asOne + asFive

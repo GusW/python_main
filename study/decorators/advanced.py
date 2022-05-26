@@ -20,6 +20,8 @@ def current_user_id():  # ditto on the NameErrors
     return 1
 
 # and now we can decorate stuff...
+
+
 @requires_permission('administrator')
 def delete_user(iUserId):
     """
