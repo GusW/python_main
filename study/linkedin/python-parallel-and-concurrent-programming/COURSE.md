@@ -122,7 +122,7 @@
 
 ### 3 - Mutual Exclusion
 
-#### Data Race (Race conditions)
+#### Data Race
 
 - Two or more concurrent threads access the same memory location
 - At least one thread is modifying it
@@ -229,3 +229,242 @@ pip install readerwriterlock
 - Multiple threads or processes actively responding to each other to resolve conflict, but that prevents them from making progress
 
 ## Part 2
+
+### 1 - Synchronization
+
+#### Condition Variable
+
+- Queue of threads waitig for a certain condition
+- Associated with a MutEx
+- 3 main operations:
+  - `wait`
+    - Automatically release lock on the mutex
+    - Go to sleeep and enter waiting queue
+    - Reacquire lock when woken up
+  - `signal`
+    - Wake up one thread fro the conditional variable queue
+    - Also called notify or wake
+  - `broadcast`
+    - Wake up all threads from the conditional variable queue
+    - Also called notify all or wake all
+
+#### Monitor
+
+- Protect section of the code with mutual exclusion
+- Provide ability for threads to wait until a condition occurs
+
+![Monitor](./images/monitor.png)
+
+#### Shared Queue or Buffer
+
+- MutEx
+- Condition variables
+  - `BufferNotFull`
+  - `BufferNotEmpty`
+
+#### Producer-Consumer Pattern
+
+- `FIFO`
+- `Producer`
+  - Add elements to shared data structure
+- `Consumer`
+  - Remove elements from shared data structure
+- Synchronization Challenges
+  - Enforce mutual exclusion of procedures and consumers
+  - Prevent producers from trying to add data to a full queue
+  - Prevent consumers from trying to remove data from an empty queue
+
+#### Unbounded queue
+
+- A queue with an unlimited capacity (...limited by memory capacity)
+
+#### Pipeline
+
+![Pipeline](./images/pipeline.png)
+
+#### Semaphore
+
+- Synchronization mechanism
+- Can be used by multiple threads at the same time
+- Includes a counter to track availability
+- `acquire()`
+  - if counter is positive, decrement counter
+  - If counter is zero, wait until available
+- `release()`
+  - Increment counter
+  - Signal waiting thread
+
+#### Counting Semaphore
+
+- Value `>= 0`
+- Used to track limited resources
+  - Pool of connections
+  - Items in a queue
+
+#### Binary Semaphore
+
+- Value `1 or 0`
+  - 0 => locked
+  - 1 => unlocked
+- Used similar to MutEx by acquiring/releasing
+  - Diff: MutEx can only be acquired/released by the same thread
+
+#### Producer/Consumer Semaphore
+
+![Producer Consumer Semaphore 1](./images/producer_consumer_semaphore_1.png)
+![Producer Consumer Semaphore 2](./images/producer_consumer_semaphore_2.png)
+
+### 2 - Barriers
+
+#### Race Conditions
+
+- Different from Data Races
+- `Data Races`:
+  - 2 or more threads concurrently access the same memory location
+  - If at least one of those threads are writing to or changing the memory value
+- `Race Conditions`:
+  - Flaw in the timing or ordering in which threads are executed
+  - Many race conditions are caused by data races
+- Searching for Race Conditions
+  - Use sleep statements to modify timing and execution order
+- Heisenbug
+  - A software bug that disappears when you try to study it
+
+#### Barrier
+
+- Prevents a group of threads from proceeding until enough threads have reached the barrier
+
+![Barrier](./images/barrier.png)
+
+### 3 - Asynchronous Tasks
+
+#### Computational Graph
+
+- DAG: Directed Acyclic Graph
+  ![Graph Threads](./images/graph_threads.png)
+  ![Graph Threads](./images/graph_work.png)
+  ![Graph Threads](./images/graph_span.png)
+  ![Graph Threads](./images/graph_ideal_parallelism.png)
+
+#### Thread Pool
+
+- Creates and maintains a collection of woker threads
+- Reuses existing threads to execute tasks
+- `suhtdown()`
+  - free up ThreadPoolExecutor resources after pending tasks finish
+
+![ThreadPoolExecutor](./images/thread_pool_executor.png)
+
+#### Future
+
+- Placeholder for a result that will be available later
+- Mechanism to access the result of an asynchronous operation
+- Returned by the `Executor.submit()` method
+- `Future Class`
+  - `cancel()`
+  - `cancelled()`
+  - `running()`
+  - `done()`
+  - `result()`
+
+#### Divide and Conquer Algorithms
+
+1. Divide the problem into subproblems
+2. Conquer the subproblems by solving them recursively
+3. Combine the solutions to the subproblems
+
+- if base case:
+  - solve problem
+- else:
+  - partition problem into "left" and "right" subproblems
+  - solve "left" problem using divide-and-conquer
+  - solve "right" problem using divide-and-conquer
+  - combine solutions to "left" and "right" problems
+
+### 4 - Evaluating Parallel Performance
+
+![Thoughput and Latency](./images/throughput_latency.png)
+![Thoughput and Latency example](./images/throughput_latency_ex.png)
+![Speedup](./images/speedup.png)
+
+#### Weak Scaling
+
+- Variable number of processors with fixed problem size per processor
+- Accomplish more work in the same time
+
+#### Strong Scaling
+
+- Variable number of processors with fixed total problem size
+- Accomplish same work in less time
+
+#### Amdahl's law
+
+![Amdahl's Law](./images/amdahls_law.png)
+![Amdahl's Law 95% S=2](./images/amdahls_law_95_2.png)
+![Amdahl's Law 95% S=3](./images/amdahls_law_95_3.png)
+![Amdahl's Law 95% S=4](./images/amdahls_law_95_4.png)
+![Amdahl's Law Speedup](./images/amdahls_law_speedup.png)
+
+#### Efficiency
+
+![Efficiency](./images/efficiency.png)
+
+- How well additional resources are utilized
+
+### 5 - Designing Parallel Programs
+
+![Parallel Design](./images/parallel_design.png)
+
+#### Parallel Design Stages
+
+- Partitioning
+  - Break down the problem into discrete pieces of work
+  - Domain (data) decomposition
+    ![Domain Decomposition](./images/domain_decomposition.png)
+    - Divide the data in small (and if possible, equally sized) partitions
+  - Functional decomposition
+    ![Functional Decomposition](./images/functional_decomposition.png)
+    - Divide the whole computation into several tasks which will perform part of the work
+- Communication
+
+  - Coordinate task execution and share information
+
+  ![Point to Point Communication](./images/point_to_point_communication.png)
+  ![Collective Communication](./images/collective_communication.png)
+  ![Granularity](./images/granularity.png)
+
+  - `Synchronous` _Blocking_ Communication
+    - Tasks wait until entire communication is complete
+    - Cannot do other work while in progress
+  - `Asynchronous` _Non Blocking_ Communication
+    - Tasks do not wait for communication to complete
+    - Can do other work while in progress
+  - `Overhead`
+    - Compute time/resources spent on communication
+  - `Latency`
+    - Time to send message from A to B (microseconds)
+  - Bandwidth
+    - Amount of data communicated per seconds (byte/s)
+
+- Agglomeration
+
+  - Combine tasks and replicate data/computation to increase efficiency
+  - Fine-Grained Parallelism
+    - Large number of small tasks
+    - Advantage: Good distribution of workload (load balancing)
+    - Disadvantage: Low computation-to-communication ratio
+      ![Computation-to-Communication ratio](./images/computation_to_communication.png)
+  - Coarse-Grained Parallelism
+    - Small number of large tasks
+    - Advantage: High computation-to-communication ratio
+    - Disadvantage: Inefficient load balancing
+      ![Load balancing](./images/load_balancing.png)
+
+- Mapping
+  - Minimize the total execution time
+  - Does not appply to:
+    - Single-core processors
+    - Automated task scheduling
+  - Strategies
+    - Place tasks that can execute concurrently on different processors
+    - Place tasks that communicate frequently on the same processor
