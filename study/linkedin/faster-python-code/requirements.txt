@@ -5,7 +5,7 @@ line_profiler==3.5.1
 matplotlib==3.5.1
 memory_profiler==0.60
 numba==0.55.1
-numpy==1.21.6
+numpy==1.22.0
 pytest-benchmark==3.4.1
 python-levenshtein==0.12.0
 scipy==1.8.0
