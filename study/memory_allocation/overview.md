@@ -1,0 +1,17 @@
+# Memory Management in Python - overview
+
+![Memory Management Overview](./images/mem_manage_01.png)
+![Memory Management Overview](./images/mem_manage_02.png)
+![Memory Management Overview](./images/mem_manage_03.png)
+![Memory Management Overview](./images/mem_manage_04.png)
+![Memory Management Overview](./images/mem_manage_05.png)
+![Memory Management Overview](./images/mem_manage_06.png)
+![Memory Management Overview](./images/mem_manage_07.png)
+![Memory Management Overview](./images/mem_manage_08.png)
+![Memory Management Overview](./images/mem_manage_09.png)
+![Memory Management Overview](./images/mem_manage_10.png)
+![Memory Management Overview](./images/mem_manage_11.png)
+![Memory Management Overview](./images/mem_manage_12.png)
+![Memory Management Overview](./images/mem_manage_13.png)
+![Memory Management Overview](./images/mem_manage_14.png)
+![Memory Management Overview](./images/mem_manage_15.png)
