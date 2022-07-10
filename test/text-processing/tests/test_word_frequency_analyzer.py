@@ -57,7 +57,7 @@ class WordFrequencyTests(unittest.TestCase):
     def test_calculate_highest_frequency_invalid_arg_types(self):
         # given an invalid text
         # then calling calculate_highest_frequency should raise an TypeError
-        with self.assertRaisesRegexp(TypeError, "expected str, received list"):
+        with self.assertRaisesRegex(TypeError, "expected str, received list"):
             self.calculate_highest_frequency(["Foo bar"])
 
     def test_calculate_highest_frequency(self):
@@ -87,12 +87,12 @@ class WordFrequencyTests(unittest.TestCase):
     def test_calculate_frequency_for_word_invalid_arg_types(self):
         # given an invalid text and a valid word
         # then calling calculate_frequency_for_word should raise an TypeError
-        with self.assertRaisesRegexp(TypeError, "expected str, received tuple"):
+        with self.assertRaisesRegex(TypeError, "expected str, received tuple"):
             self.calculate_frequency_for_word(("Foo bar",), "foo")
 
         # given a valid text and an invalid word
         # then calling calculate_frequency_for_word should raise an TypeError
-        with self.assertRaisesRegexp(TypeError, "expected str, received int"):
+        with self.assertRaisesRegex(TypeError, "expected str, received int"):
             self.calculate_frequency_for_word("Foo bar", 998)
 
     def test_calculate_frequency_for_word(self):
@@ -134,12 +134,12 @@ class WordFrequencyTests(unittest.TestCase):
     def test_calculate_most_frequent_n_words_arg_types(self):
         # given an invalid text and a valid integer
         # then calling calculate_most_frequent_n_words should raise an TypeError
-        with self.assertRaisesRegexp(TypeError, "expected str, received dict"):
+        with self.assertRaisesRegex(TypeError, "expected str, received dict"):
             self.calculate_most_frequent_n_words({"foo": "bar"}, 4)
 
         # given a valid text and an invalid integer
         # then calling calculate_most_frequent_n_words should raise an TypeError
-        with self.assertRaisesRegexp(TypeError, "expected int, received float"):
+        with self.assertRaisesRegex(TypeError, "expected int, received float"):
             self.calculate_most_frequent_n_words("Foo bar", 2.09)
 
     def test_calculate_most_frequent_n_words(self):
