@@ -1,9 +1,9 @@
-from unittest import TestCase
+import unittest
 from text_processing.word_frequency_analyzer import WordFrequency, WordFrequencyAnalyzer
 import re
 
 
-class WordFrequencyTests(TestCase):
+class WordFrequencyTests(unittest.TestCase):
     def setUp(self) -> None:
         self.single_frequency_input = "Done with the exercise"
         self.simple_input = "The sun shines over the lake"
@@ -192,3 +192,7 @@ class WordFrequencyTests(TestCase):
             [word_frequency.word for word_frequency in simple_input_res],
             ["the", "lake", "over", "shines", "sun"],
         )
+
+
+if __name__ == "__main__":
+    unittest.main()

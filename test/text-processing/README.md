@@ -49,3 +49,20 @@ class WordFrequecyAnalyzer
     - self explanatory ;)
 - **Extra assumption** on `calculate_most_frequent_n_words`
   - if `N` is greater than `len(text)` we will `return all` WordFrequencies bound to the text `firstly per frequency and then alphabetically sorted` _instead of_ raising an error such as "out of bounds".
+- **Running tests**
+
+  - If using and IDE/Text editor, the tests should be automatically loaded
+  - If using a Terminal to run the tests, you may need to firstly export the `PYTHONPATH`:
+
+    ```bash
+    # bash
+    cd <root folder> # where this README file is located
+    export PYTHONPATH=.
+
+    # or Windows
+    set PYTHONPATH=.
+
+    python tests/test_word_frequency_analyzer.py
+    # or
+    python -m unittest tests/test_word_frequency_analyzer.py
+    ```
