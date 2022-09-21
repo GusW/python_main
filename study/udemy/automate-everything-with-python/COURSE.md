@@ -32,3 +32,4 @@ pip install Flask
 ## 05 - Files and Folders
 
 <https://docs.python.org/3/library/pathlib.html>
+<https://docs.python.org/3/library/zipfile.html>

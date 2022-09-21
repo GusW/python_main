@@ -1,0 +1,13 @@
+from pathlib import Path
+
+
+PARENT_FOLDER = Path(__file__).parent.resolve()
+
+FILES_FOLDER_NAME = "files"
+FILES_FOLDER_PATH = Path.joinpath(PARENT_FOLDER, FILES_FOLDER_NAME)
+
+PARENT_FOLDER_NAME = "parent_folder"
+PARENT_FOLDER_PATH = Path.joinpath(PARENT_FOLDER, PARENT_FOLDER_NAME)
+
+TEMP_FOLDER_NAME = "temp"
+TEMP_FOLDER_PATH = Path.joinpath(PARENT_FOLDER, TEMP_FOLDER_NAME)
