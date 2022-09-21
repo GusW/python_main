@@ -33,3 +33,16 @@ pip install Flask
 
 <https://docs.python.org/3/library/pathlib.html>
 <https://docs.python.org/3/library/zipfile.html>
+
+## 06 - Emails
+
+<https://docs.python.org/3/library/os.html>
+<https://yagmail.readthedocs.io/en/latest/>
+<https://pythonhow.com/how/store-python-passwords-securely-on-windows-mac-and-linux/>
+<https://www.pythonanywhere.com/>
+<https://pandas.pydata.org/docs/>
+
+```bash
+pip install yagmail
+pip install pandas
+```
