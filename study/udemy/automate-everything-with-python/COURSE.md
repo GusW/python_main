@@ -47,3 +47,24 @@ pip install Flask
 pip install yagmail
 pip install pandas
 ```
+
+## 07 - PDFs
+
+<http://www.fpdf.org/>
+<https://pymupdf.readthedocs.io/en/latest/>
+<https://tabula-py.readthedocs.io/en/latest/>
+
+```bash
+pip install fpdf
+pip install openpyxl
+pip install pymupdf
+pip install tabula-py
+```
+
+## Modern Tools
+
+<>
+
+```bash
+
+```
