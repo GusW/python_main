@@ -5,9 +5,9 @@ from typing import Callable
 
 from selenium.webdriver import Chrome
 
-from a_browser_automation.config import get_driver
-from a_browser_automation.constants import TEMP_FOLDER_PATH
-from a_browser_automation.scraper import get_dynamic_content
+from b_browser_automation.config import get_driver
+from b_browser_automation.constants import TEMP_FOLDER_PATH
+from b_browser_automation.scraper import get_dynamic_content
 
 
 def set_timeout(callback_fn: Callable, timeout: int = 2):

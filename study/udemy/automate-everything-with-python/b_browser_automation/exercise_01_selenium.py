@@ -1,5 +1,5 @@
-from a_browser_automation.login import main as login
-from a_browser_automation.scraper import get_dynamic_content
+from b_browser_automation.login import main as login
+from b_browser_automation.scraper import get_dynamic_content
 
 
 def main():

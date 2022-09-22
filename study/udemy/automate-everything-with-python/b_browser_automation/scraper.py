@@ -3,7 +3,7 @@ from time import sleep
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
 
-from a_browser_automation.config import get_driver
+from b_browser_automation.config import get_driver
 
 
 TITLE_XPATH = "/html/body/div[1]/div/h1[1]"

@@ -3,7 +3,7 @@ from typing import Optional
 from bs4 import BeautifulSoup
 import requests
 
-from a_browser_automation.constants import X_RATES_CALCULATOR_URI
+from b_browser_automation.constants import X_RATES_CALCULATOR_URI
 
 
 def get_html(in_ccy: str, out_ccy: str, amount: int = 1) -> Optional[str]:

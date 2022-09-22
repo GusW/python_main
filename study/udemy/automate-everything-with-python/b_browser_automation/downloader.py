@@ -4,7 +4,7 @@ from time import mktime
 
 import requests
 
-from a_browser_automation.constants import (
+from b_browser_automation.constants import (
     TEMP_FOLDER_PATH,
     USER_AGENT,
     YAHOO_FINANCE_URI,

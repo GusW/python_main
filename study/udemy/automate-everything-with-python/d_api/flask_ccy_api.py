@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 
-from a_browser_automation.scraper_bs4 import main as scraper_bs4
+from b_browser_automation.scraper_bs4 import main as scraper_bs4
 
 app = Flask(__name__)
 

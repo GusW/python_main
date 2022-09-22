@@ -1,7 +1,7 @@
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-from a_browser_automation.config import get_driver
+from b_browser_automation.config import get_driver
 
 _USERNAME = "automated"
 _PASSWORD = "automatedautomated"
