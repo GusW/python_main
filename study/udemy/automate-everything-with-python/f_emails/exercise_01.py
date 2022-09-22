@@ -1,6 +1,7 @@
 from time import sleep
 
-from f_emails.send_email import send_email
+from f_emails.constants import RECEIVER
+from f_emails.send_gmail_email import send_email
 
 
 def schedule_email(
@@ -12,13 +13,12 @@ def schedule_email(
 
 
 def main() -> None:
-    receiver = "gustavo.watanabe@aol.com"
     subject = "Hello from Python!"
     contents = """
     Hey!
     I'm sending this email using Python.
     """
-    schedule_email(60, receiver, subject=subject, contents=contents)
+    schedule_email(60, RECEIVER, subject=subject, contents=contents)
 
 
 if __name__ == "__main__":

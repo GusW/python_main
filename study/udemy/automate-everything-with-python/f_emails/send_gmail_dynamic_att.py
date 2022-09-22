@@ -2,14 +2,14 @@ from pathlib import Path, PosixPath
 from typing import Any, Iterable
 import pandas as pd
 
-from f_emails.config import email_client
+from f_emails.config import gmail_client
 from f_emails.constants import CONTACTS_PATH, TEMP_FOLDER_PATH
 
 
 def send_email_with_attachment(
     receiver: str, subject: str = "", contents: str = "", file_path: str = ""
 ):
-    email_client().send(to=receiver, subject=subject, contents=[contents, file_path])
+    gmail_client().send(to=receiver, subject=subject, contents=[contents, file_path])
     print("Email with attachment was sent!")
 
 
