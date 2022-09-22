@@ -63,8 +63,11 @@ pip install tabula-py
 
 ## Modern Tools
 
-<>
+<https://docs.streamlit.io/>
+<https://replit.com/repls>
+<https://deepnote.com/workspace/redpillcorp-a4b18895-b130-459f-b163-6bb7525b51c3>
+<https://www.notion.so/Getting-Started-bdf277ba70be4dd7b962517fe2a2805f>
 
 ```bash
-
+pip install streamlit
 ```
