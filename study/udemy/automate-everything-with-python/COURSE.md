@@ -1,6 +1,6 @@
 # Python Browser Automation
 
-## 02 - Browser Automation
+## 02 (b) - Browser Automation
 
 <https://chromedriver.chromium.org/home>
 <https://docs.python.org/3/library/datetime.html>
@@ -15,7 +15,7 @@ pip install requests
 pip install beautifulsoup4
 ```
 
-## 04 - APIS
+## 04 (d) - APIS
 
 <https://developers.facebook.com/docs/graph-api/reference>
 <https://flask.palletsprojects.com/en/2.0.x/>
@@ -29,12 +29,12 @@ pip install python-dotenv
 pip install Flask
 ```
 
-## 05 - Files and Folders
+## 05 (e) - Files and Folders
 
 <https://docs.python.org/3/library/pathlib.html>
 <https://docs.python.org/3/library/zipfile.html>
 
-## 06 - Emails
+## 06 (f) - Emails
 
 <https://docs.python.org/3/library/os.html>
 <https://docs.python.org/3/library/smtplib.html>
@@ -48,7 +48,7 @@ pip install yagmail
 pip install pandas
 ```
 
-## 07 - PDFs
+## 07 (g) - PDFs
 
 <http://www.fpdf.org/>
 <https://pymupdf.readthedocs.io/en/latest/>
@@ -61,11 +61,11 @@ pip install pymupdf
 pip install tabula-py
 ```
 
-## Modern Tools
+## 08 (h) - Modern Tools
 
+<https://deepnote.com/workspace/redpillcorp-a4b18895-b130-459f-b163-6bb7525b51c3>
 <https://docs.streamlit.io/>
 <https://replit.com/repls>
-<https://deepnote.com/workspace/redpillcorp-a4b18895-b130-459f-b163-6bb7525b51c3>
 <https://www.notion.so/Getting-Started-bdf277ba70be4dd7b962517fe2a2805f>
 <https://www.pythonanywhere.com/user/gusw/>
 
@@ -73,8 +73,18 @@ pip install tabula-py
 pip install streamlit
 ```
 
-## Web and Desktop Apps
+## 09 (i) - Web and Desktop Apps
 
 ```bash
 pip install PyQt6
+```
+
+## 11 (k) - Google Sheets
+
+<https://docs.gspread.org/en/latest/>
+<https://docs.python.org/3/library/re.html>
+<https://docs.python.org/3/library/statistics.html>
+
+```bash
+pip install gspread
 ```
