@@ -72,3 +72,9 @@ pip install tabula-py
 ```bash
 pip install streamlit
 ```
+
+## Web and Desktop Apps
+
+```bash
+pip install PyQt6
+```

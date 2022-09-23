@@ -24,7 +24,7 @@ def main(in_ccy: str, out_ccy: str, amount: int = 1) -> Optional[str]:
         print(f"{ccy=}")
         print(f"{rate=}")
 
-        return fx_rate
+        return rate
 
 
 if __name__ == "__main__":
