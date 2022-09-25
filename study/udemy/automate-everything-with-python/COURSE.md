@@ -88,3 +88,31 @@ pip install PyQt6
 ```bash
 pip install gspread
 ```
+
+### Getting Google Developer Private Key to Google Drive API
+
+![Goggle Developer API 01](k_google_sheets/images/google-console-01.png)
+![Goggle Developer API 02](k_google_sheets/images/google-console-02.png)
+![Goggle Developer API 03](k_google_sheets/images/google-console-03.png)
+![Goggle Developer API 04](k_google_sheets/images/google-console-04.png)
+![Goggle Developer API 05](k_google_sheets/images/google-console-05.png)
+![Goggle Developer API 06](k_google_sheets/images/google-console-06.png)
+![Goggle Developer API 07](k_google_sheets/images/google-console-07.png)
+![Goggle Developer API 08](k_google_sheets/images/google-console-08.png)
+![Goggle Developer API 09](k_google_sheets/images/google-console-09.png)
+![Goggle Developer API 10](k_google_sheets/images/google-console-10.png)
+![Goggle Developer API 11](k_google_sheets/images/google-console-11.png)
+![Goggle Developer API 12](k_google_sheets/images/google-console-12.png)
+![Goggle Developer API 13](k_google_sheets/images/google-console-13.png)
+![Goggle Developer API 14](k_google_sheets/images/google-console-14.png)
+![Goggle Developer API 15](k_google_sheets/images/google-console-15.png)
+![Goggle Developer API 16](k_google_sheets/images/google-console-16.png)
+
+## 12 (l) - Image Processing
+
+<https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html>
+<https://numpy.org/doc/>
+
+```bash
+pip install opencv-python
+```
