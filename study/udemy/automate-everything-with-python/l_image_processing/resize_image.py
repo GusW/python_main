@@ -1,11 +1,11 @@
 from pathlib import Path, PosixPath
 
-import cv2
+from cv2 import imread, imwrite, resize
 
 from l_image_processing.constants import TEMP_FOLDER_PATH
 
 
-def calculate_size(
+def _calculate_size(
     scale_percentage: float, width: float, height: float
 ) -> tuple[int, int]:
     new_width = int(width * scale_percentage / 100)
@@ -28,13 +28,13 @@ def resize_image(
         ),
     )
 
-    image = cv2.imread(image_path.as_posix())
+    image = imread(image_path.as_posix())
     height, width, *_ = image.shape
-    resized_image = cv2.resize(
-        image, dsize=calculate_size(scale_percentage, width, height)
+    resized_image = resize(
+        image, dsize=_calculate_size(scale_percentage, width, height)
     )
 
-    cv2.imwrite(
+    imwrite(
         image_destination.as_posix(),
         resized_image,
     )

@@ -1,12 +1,20 @@
 from pathlib import Path
 
+TEMP_FOLDER_NAME = "temp"
+EX_01_FOLDER_NAME = "ex01"
+EX_03_FOLDER_NAME = "ex03"
+COLLAGE_FOLDER_NAME = "collage"
 
 PARENT_FOLDER_PATH = Path(__file__).parent.resolve()
-TEMP_FOLDER_NAME = "temp"
 TEMP_FOLDER_PATH = Path.joinpath(PARENT_FOLDER_PATH, TEMP_FOLDER_NAME)
 
-EX_01_FOLDER_NAME = "ex01"
 EX_01_FOLDER_PATH = Path.joinpath(TEMP_FOLDER_PATH, EX_01_FOLDER_NAME)
 EX_01_IMAGES_PATH = Path.joinpath(EX_01_FOLDER_PATH, "images")
 EX_01_GRAYIMAGES_PATH = Path.joinpath(EX_01_FOLDER_PATH, "grayimages")
 EX_02_RESIZEDIMAGES_PATH = Path.joinpath(EX_01_FOLDER_PATH, "resizedimages")
+
+EX_03_FOLDER_PATH = Path.joinpath(TEMP_FOLDER_PATH, EX_03_FOLDER_NAME)
+EX_03_IMAGES_PATH = Path.joinpath(EX_03_FOLDER_PATH, "images")
+EX_03_WITH_FACES_PATH = Path.joinpath(EX_03_FOLDER_PATH, "with_faces")
+
+COLLAGE_FOLDER_PATH = Path.joinpath(TEMP_FOLDER_PATH, COLLAGE_FOLDER_NAME)

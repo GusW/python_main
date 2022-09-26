@@ -1,12 +1,12 @@
 from pathlib import Path, PosixPath
 
-import cv2
+from cv2 import imread, imwrite
 
 from l_image_processing.constants import TEMP_FOLDER_PATH
 
 
 def load_colored_image(image_path: PosixPath):
-    colored_pic = cv2.imread(
+    colored_pic = imread(
         image_path.as_posix(),
         1,  # 1 = colored, 0 = grayscale
     )
@@ -17,7 +17,7 @@ def load_colored_image(image_path: PosixPath):
 
 
 def to_grayscale(image_path: PosixPath, image_destination: PosixPath = None) -> str:
-    grayscale_pic = cv2.imread(
+    grayscale_pic = imread(
         image_path.as_posix(),
         0,  # 1 = colored, 0 = grayscale´
     )
@@ -31,7 +31,7 @@ def to_grayscale(image_path: PosixPath, image_destination: PosixPath = None) -> 
         ),
     )
 
-    cv2.imwrite(
+    imwrite(
         image_destination.as_posix(),
         grayscale_pic,
     )

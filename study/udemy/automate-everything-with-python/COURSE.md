@@ -116,3 +116,11 @@ pip install gspread
 ```bash
 pip install opencv-python
 ```
+
+## 13 (m) - Webcam and video processing
+
+<>
+
+```bash
+pip install
+```
