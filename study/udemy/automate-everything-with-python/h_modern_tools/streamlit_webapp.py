@@ -19,9 +19,10 @@ def main():
     Just testing around and making sure things are in place.
     """
     )
-    st.write(_create_df())
-    st.line_chart(_create_df())
-    st.area_chart(_create_df())
+    df = _create_df()
+    st.write(df)
+    st.line_chart(df)
+    st.area_chart(df)
 
     my_slider = st.slider("Temperature:", -50, 150)
     st.write(my_slider, "Celsius is ", my_slider + 9 / 5 * 32, " Fahrenheit")

@@ -75,6 +75,8 @@ pip install streamlit
 
 ## 09 (i) - Web and Desktop Apps
 
+<https://www.riverbankcomputing.com/software/pyqt/>
+
 ```bash
 pip install PyQt6
 ```
