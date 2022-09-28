@@ -119,7 +119,7 @@ pip install gspread
 pip install opencv-python
 ```
 
-## 13 (m) - Webcam and video processing
+## 15 (o) - Text processing
 
 <>
 
