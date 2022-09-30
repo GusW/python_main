@@ -119,9 +119,9 @@ pip install gspread
 pip install opencv-python
 ```
 
-## 15 (o) - Text processing
+## 16 (p) - Regex
 
-<>
+<https://docs.python.org/3/library/re.html>
 
 ```bash
 pip install
