@@ -119,10 +119,11 @@ pip install gspread
 pip install opencv-python
 ```
 
-## 16 (p) - Regex
+## 17 (q) - NLP (Natural Language Processing)
 
-<https://docs.python.org/3/library/re.html>
+<https://www.nltk.org/>
 
 ```bash
-pip install
+pip install nltk
+pip install sklearn
 ```
