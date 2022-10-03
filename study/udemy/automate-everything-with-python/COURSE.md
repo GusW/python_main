@@ -143,3 +143,11 @@ pip install wikipedia
 ```bash
 pip install filestack-python
 ```
+
+## 21 (u) - SQL Databases
+
+<https://www.sqlite.org/docs.html>
+
+```bash
+pip install
+```
