@@ -127,3 +127,11 @@ pip install opencv-python
 pip install nltk
 pip install sklearn
 ```
+
+## 18 (r) - Chatbots
+
+<<https://www.nltk.org/>
+
+```bash
+pip install wikipedia
+```
