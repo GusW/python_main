@@ -130,8 +130,16 @@ pip install sklearn
 
 ## 18 (r) - Chatbots
 
-<<https://www.nltk.org/>
+<https://wikipedia.readthedocs.io/en/latest/code.html#api>
 
 ```bash
 pip install wikipedia
+```
+
+## 20 (t) - Downloading, Uploading, Sharing files
+
+<https://requests.readthedocs.io/en/latest/>
+
+```bash
+pip install filestack-python
 ```
