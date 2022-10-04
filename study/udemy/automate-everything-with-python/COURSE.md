@@ -148,6 +148,10 @@ pip install filestack-python
 
 <https://www.sqlite.org/docs.html>
 
+## 22 (v) - SMS
+
+<https://www.twilio.com/docs/libraries/python>
+
 ```bash
-pip install
+pip install twilio
 ```

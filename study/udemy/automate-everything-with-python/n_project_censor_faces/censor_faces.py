@@ -1,5 +1,9 @@
 from m_video_processing.detect_faces import create_video_with_face_detector
-from n_censor_faces.constants import SMILE_VIDEO_PATH, CAT_FILE_PATH, TEMP_FOLDER_PATH
+from n_project_censor_faces.constants import (
+    SMILE_VIDEO_PATH,
+    CAT_FILE_PATH,
+    TEMP_FOLDER_PATH,
+)
 
 
 def main():
