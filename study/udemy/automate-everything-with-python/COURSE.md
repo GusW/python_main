@@ -155,3 +155,13 @@ pip install filestack-python
 ```bash
 pip install twilio
 ```
+
+## 24 (x) - Audio Processing
+
+<https://github.com/jiaaro/pydub>
+<https://pypi.org/project/SpeechRecognition/>
+
+```bash
+pip install pydub
+pip install SpeechRecognition
+```
