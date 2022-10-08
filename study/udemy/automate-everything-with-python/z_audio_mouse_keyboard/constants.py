@@ -1,0 +1,11 @@
+from pathlib import Path
+
+TEMP_FOLDER_NAME = "temp"
+TEMPLATE_FOLDER_NAME = "templates"
+INDEX_HTML_NAME = "index.html"
+
+PARENT_FOLDER_PATH = Path(__file__).parent.resolve()
+
+TEMP_FOLDER_PATH = Path.joinpath(PARENT_FOLDER_PATH, TEMP_FOLDER_NAME)
+TEMPLATE_FOLDER_PATH = Path.joinpath(PARENT_FOLDER_PATH, TEMPLATE_FOLDER_NAME)
+INDEX_HTML_PATH = Path.joinpath(TEMPLATE_FOLDER_PATH, INDEX_HTML_NAME)

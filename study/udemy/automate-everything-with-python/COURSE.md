@@ -173,3 +173,21 @@ pip install SpeechRecognition
 ```bash
 pip install praw
 ```
+
+## 26 (z) - Audio, Mouse Keyboard, Screenshot
+
+<https://python-mss.readthedocs.io/>
+<https://python-sounddevice.readthedocs.io/en/0.4.4/>
+<https://docs.scipy.org/doc/scipy/>
+<https://pyautogui.readthedocs.io/en/latest/>
+<https://psutil.readthedocs.io/en/latest/>
+
+```bash
+pip install mss
+sudo dnf install python3-pyaudio
+pip install python3-pyaudio
+pip install sounddevice
+pip install scipy
+pip install pyautogui
+pip install psutil
+```
