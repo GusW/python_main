@@ -165,3 +165,11 @@ pip install twilio
 pip install pydub
 pip install SpeechRecognition
 ```
+
+## 25 (y) - Reddit Bots
+
+<https://praw.readthedocs.io/en/stable/>
+
+```bash
+pip install praw
+```
