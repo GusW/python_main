@@ -13,6 +13,24 @@ from l_image_processing.detect_faces import detect_faces
 from m_video_processing.constants import TEMP_FOLDER_PATH
 
 
+def create_camera_frame():
+    video = VideoCapture(0)  # int 0: main device camera; 1, 2...
+    success, frame = video.read()
+    while True:
+        success, frame = video.read()
+        if not success:
+            break
+
+        # visual feedback
+        imshow("Instant camera access...", frame)
+
+        if (key := waitKey(1)) and key == ord("q"):
+            break
+
+    video.release()
+    destroyAllWindows()
+
+
 def create_webcam_with_face_detector(output_path: PosixPath):
     video = VideoCapture(0)  # int 0: main device camera; 1, 2...
 
@@ -51,6 +69,7 @@ def create_webcam_with_face_detector(output_path: PosixPath):
 
 
 def main():
+    # create_camera_frame()
     create_webcam_with_face_detector(TEMP_FOLDER_PATH)
 
 

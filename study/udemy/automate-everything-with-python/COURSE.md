@@ -9,7 +9,6 @@
 <https://www.selenium.dev/documentation/webdriver/>
 
 ```bash
-# https://www.selenium.dev/documentation/webdriver/
 pip install selenium
 pip install requests
 pip install beautifulsoup4
@@ -190,4 +189,16 @@ pip install sounddevice
 pip install scipy
 pip install pyautogui
 pip install psutil
+```
+
+## 28 (zc) - Miscellaneous
+
+<https://py-googletrans.readthedocs.io/en/latest/>
+<https://www.json.org/json-en.html>
+<https://docs.python.org/3/library/webbrowser.html>
+<https://omz-software.com/pythonista/docs/ios/qrcode.html>
+
+```bash
+pip install googletrans==3.1.0a0
+pip install qrcode[pil]
 ```
