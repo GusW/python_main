@@ -1,5 +1,5 @@
 cython==0.29.28
-ipython==8.3.0
+ipython==8.10.0
 joblib==1.2.0
 line_profiler==3.5.1
 matplotlib==3.5.1
